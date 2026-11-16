@@ -38,7 +38,7 @@ def generate_ai_plan(user_prompt: str, api_key: str) -> AIResponsePlan:
     if api_key.strip() and HAS_GENAI:
         client = genai.Client(api_key=api_key.strip())
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-3.5-flash-lite",
             contents=f"{SYSTEM_PROMPT}\n\nЗапит користувача: {user_prompt}",
             config={"response_mime_type": "application/json"},
         )
